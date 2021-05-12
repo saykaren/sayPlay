@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/sayplay/static/css/main.a95833ba.chunk.css",
+    "main.js": "/sayplay/static/js/main.05907a29.chunk.js",
+    "main.js.map": "/sayplay/static/js/main.05907a29.chunk.js.map",
+    "runtime-main.js": "/sayplay/static/js/runtime-main.33651c61.js",
+    "runtime-main.js.map": "/sayplay/static/js/runtime-main.33651c61.js.map",
+    "static/js/2.82f286a0.chunk.js": "/sayplay/static/js/2.82f286a0.chunk.js",
+    "static/js/2.82f286a0.chunk.js.map": "/sayplay/static/js/2.82f286a0.chunk.js.map",
+    "static/js/3.47080624.chunk.js": "/sayplay/static/js/3.47080624.chunk.js",
+    "static/js/3.47080624.chunk.js.map": "/sayplay/static/js/3.47080624.chunk.js.map",
+    "index.html": "/sayplay/index.html",
+    "static/css/main.a95833ba.chunk.css.map": "/sayplay/static/css/main.a95833ba.chunk.css.map",
+    "static/js/2.82f286a0.chunk.js.LICENSE.txt": "/sayplay/static/js/2.82f286a0.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.33651c61.js",
+    "static/js/2.82f286a0.chunk.js",
+    "static/css/main.a95833ba.chunk.css",
+    "static/js/main.05907a29.chunk.js"
+  ]
+}
