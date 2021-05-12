@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/sayPlay/static/css/main.a95833ba.chunk.css",
-    "main.js": "/sayPlay/static/js/main.a4dcd8de.chunk.js",
-    "main.js.map": "/sayPlay/static/js/main.a4dcd8de.chunk.js.map",
-    "runtime-main.js": "/sayPlay/static/js/runtime-main.2f0aad8f.js",
-    "runtime-main.js.map": "/sayPlay/static/js/runtime-main.2f0aad8f.js.map",
-    "static/js/2.bd369207.chunk.js": "/sayPlay/static/js/2.bd369207.chunk.js",
-    "static/js/2.bd369207.chunk.js.map": "/sayPlay/static/js/2.bd369207.chunk.js.map",
-    "static/js/3.870b6d97.chunk.js": "/sayPlay/static/js/3.870b6d97.chunk.js",
-    "static/js/3.870b6d97.chunk.js.map": "/sayPlay/static/js/3.870b6d97.chunk.js.map",
+    "main.js": "/sayPlay/static/js/main.fd2913f6.chunk.js",
+    "main.js.map": "/sayPlay/static/js/main.fd2913f6.chunk.js.map",
+    "runtime-main.js": "/sayPlay/static/js/runtime-main.6b395f7f.js",
+    "runtime-main.js.map": "/sayPlay/static/js/runtime-main.6b395f7f.js.map",
+    "static/js/2.ca45e024.chunk.js": "/sayPlay/static/js/2.ca45e024.chunk.js",
+    "static/js/2.ca45e024.chunk.js.map": "/sayPlay/static/js/2.ca45e024.chunk.js.map",
+    "static/js/3.57cd3c60.chunk.js": "/sayPlay/static/js/3.57cd3c60.chunk.js",
+    "static/js/3.57cd3c60.chunk.js.map": "/sayPlay/static/js/3.57cd3c60.chunk.js.map",
     "index.html": "/sayPlay/index.html",
     "static/css/main.a95833ba.chunk.css.map": "/sayPlay/static/css/main.a95833ba.chunk.css.map",
-    "static/js/2.bd369207.chunk.js.LICENSE.txt": "/sayPlay/static/js/2.bd369207.chunk.js.LICENSE.txt"
+    "static/js/2.ca45e024.chunk.js.LICENSE.txt": "/sayPlay/static/js/2.ca45e024.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.2f0aad8f.js",
-    "static/js/2.bd369207.chunk.js",
+    "static/js/runtime-main.6b395f7f.js",
+    "static/js/2.ca45e024.chunk.js",
     "static/css/main.a95833ba.chunk.css",
-    "static/js/main.a4dcd8de.chunk.js"
+    "static/js/main.fd2913f6.chunk.js"
   ]
 }
