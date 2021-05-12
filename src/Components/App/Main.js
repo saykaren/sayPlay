@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Main = () => {
-    return ( <div>TESTING yes </div> );
+    return ( <div className='App-header'>TESTING yes </div> );
 }
  
 export default Main;
