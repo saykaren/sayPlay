@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/sayplay/static/css/main.a95833ba.chunk.css",
-    "main.js": "/sayplay/static/js/main.4370eaef.chunk.js",
-    "main.js.map": "/sayplay/static/js/main.4370eaef.chunk.js.map",
+    "main.js": "/sayplay/static/js/main.a4dcd8de.chunk.js",
+    "main.js.map": "/sayplay/static/js/main.a4dcd8de.chunk.js.map",
     "runtime-main.js": "/sayplay/static/js/runtime-main.81f25f14.js",
     "runtime-main.js.map": "/sayplay/static/js/runtime-main.81f25f14.js.map",
     "static/js/2.92ea9944.chunk.js": "/sayplay/static/js/2.92ea9944.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.81f25f14.js",
     "static/js/2.92ea9944.chunk.js",
     "static/css/main.a95833ba.chunk.css",
-    "static/js/main.4370eaef.chunk.js"
+    "static/js/main.a4dcd8de.chunk.js"
   ]
 }
