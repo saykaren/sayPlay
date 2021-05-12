@@ -1,21 +1,20 @@
 import React from "react";
 import "../Styling/App.scss";
-// import { QueryClient, QueryClientProvider } from "react-query";
+import { QueryClient, QueryClientProvider } from "react-query";
+import Main from './Main';
 
 
-// import {ReactQueryDevtools} from 'react-query/devtools';
+import {ReactQueryDevtools} from 'react-query/devtools';
 
-// const queryClient = new QueryClient();
+const queryClient = new QueryClient();
 
 const App = () => {
   return (
-      <>
-      test
-      </>
-    // <QueryClientProvider client={queryClient}>
 
-    //   <ReactQueryDevtools initialIsOpen={false} position={'bottom-right'} />
-    // </QueryClientProvider>
+    <QueryClientProvider client={queryClient}>
+        <Main />
+      <ReactQueryDevtools initialIsOpen={false} position={'bottom-right'} />
+    </QueryClientProvider>
   );
 };
 
