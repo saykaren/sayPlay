@@ -5,17 +5,17 @@
     "main.js.map": "/sayplay/static/js/main.a4dcd8de.chunk.js.map",
     "runtime-main.js": "/sayplay/static/js/runtime-main.81f25f14.js",
     "runtime-main.js.map": "/sayplay/static/js/runtime-main.81f25f14.js.map",
-    "static/js/2.92ea9944.chunk.js": "/sayplay/static/js/2.92ea9944.chunk.js",
-    "static/js/2.92ea9944.chunk.js.map": "/sayplay/static/js/2.92ea9944.chunk.js.map",
+    "static/js/2.bd369207.chunk.js": "/sayplay/static/js/2.bd369207.chunk.js",
+    "static/js/2.bd369207.chunk.js.map": "/sayplay/static/js/2.bd369207.chunk.js.map",
     "static/js/3.870b6d97.chunk.js": "/sayplay/static/js/3.870b6d97.chunk.js",
     "static/js/3.870b6d97.chunk.js.map": "/sayplay/static/js/3.870b6d97.chunk.js.map",
     "index.html": "/sayplay/index.html",
     "static/css/main.a95833ba.chunk.css.map": "/sayplay/static/css/main.a95833ba.chunk.css.map",
-    "static/js/2.92ea9944.chunk.js.LICENSE.txt": "/sayplay/static/js/2.92ea9944.chunk.js.LICENSE.txt"
+    "static/js/2.bd369207.chunk.js.LICENSE.txt": "/sayplay/static/js/2.bd369207.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.81f25f14.js",
-    "static/js/2.92ea9944.chunk.js",
+    "static/js/2.bd369207.chunk.js",
     "static/css/main.a95833ba.chunk.css",
     "static/js/main.a4dcd8de.chunk.js"
   ]
