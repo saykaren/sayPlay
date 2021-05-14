@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useQuery } from "react-query";
 import fetchURL from "./../useQuery/fetchURL";
 import BasicTable from './BasicTable';
+import SortingTable from './SortingTable';
 
 //https://www.balldontlie.io/#getting-started
 // https://www.balldontlie.io/api/v1/players
@@ -19,7 +20,8 @@ const Main = () => {
 
   return (
     <>
-    <BasicTable/>
+    <SortingTable/>
+    {/* <BasicTable/> */}
       {playerList.data && (
         <div className="App-header">
           {playerList.data.data.map((playerPlayer, indexPlayer) => (
