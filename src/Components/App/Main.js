@@ -5,6 +5,7 @@ import BasicTable from './BasicTable';
 import SortingTable from './SortingTable';
 import GlobalFilter from './GlobalFilter';
 import FilteringTable from "./FilteringTable";
+import PaginationTable from "./PaginationTable";
 
 //https://www.balldontlie.io/#getting-started
 // https://www.balldontlie.io/api/v1/players
@@ -22,7 +23,8 @@ const Main = () => {
 
   return (
     <>
-    <FilteringTable />
+    <PaginationTable/>
+    {/* <FilteringTable /> */}
     {/* <SortingTable/> */}
     {/* <BasicTable/> */}
       {playerList.data && (
