@@ -3,12 +3,16 @@ import { useTable, useGlobalFilter, useFilters} from "react-table";
 import MOCK_DATA from "./../Data/MOCK_DATA.json";
 import { COLUMNS, GROUPED_COLUMNS } from "./Columns";
 import GlobalFilter from './GlobalFilter';
+import ColumnFilter from "./ColumnFilter";
 
  
 
 const FilteringTable = () => {
   const columns = useMemo(() => COLUMNS, []);
   const data = useMemo(() => MOCK_DATA, []);
+  const defaultColumn = useMemo(() => {
+    return {Filter: ColumnFilter}
+  }, []);
 
   const {
     getTableProps,
@@ -22,6 +26,7 @@ const FilteringTable = () => {
   } = useTable({
     columns,
     data,
+    defaultColumn
   }, useFilters, useGlobalFilter);
 
   const { globalFilter} = state;
