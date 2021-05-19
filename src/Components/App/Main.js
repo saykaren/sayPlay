@@ -7,6 +7,7 @@ import GlobalFilter from './GlobalFilter';
 import FilteringTable from "./FilteringTable";
 import PaginationTable from "./PaginationTable";
 import RowSelection from "./RowSelection";
+import ColumnOrder from "./ColumnOrder";
 
 //https://www.balldontlie.io/#getting-started
 // https://www.balldontlie.io/api/v1/players
@@ -24,7 +25,8 @@ const Main = () => {
 
   return (
     <>
-    <RowSelection />
+    <ColumnOrder/>
+    {/* <RowSelection /> */}
     {/* <PaginationTable/> */}
     {/* <FilteringTable /> */}
     {/* <SortingTable/> */}
