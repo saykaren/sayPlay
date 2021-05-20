@@ -8,6 +8,7 @@ import FilteringTable from "./FilteringTable";
 import PaginationTable from "./PaginationTable";
 import RowSelection from "./RowSelection";
 import ColumnOrder from "./ColumnOrder";
+import ColumnHiding from "./ColumnHiding";
 
 //https://www.balldontlie.io/#getting-started
 // https://www.balldontlie.io/api/v1/players
@@ -25,7 +26,8 @@ const Main = () => {
 
   return (
     <>
-    <ColumnOrder/>
+    <ColumnHiding />
+    {/* <ColumnOrder/> */}
     {/* <RowSelection /> */}
     {/* <PaginationTable/> */}
     {/* <FilteringTable /> */}
