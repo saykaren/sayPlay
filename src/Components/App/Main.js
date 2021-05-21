@@ -9,6 +9,7 @@ import PaginationTable from "./PaginationTable";
 import RowSelection from "./RowSelection";
 import ColumnOrder from "./ColumnOrder";
 import ColumnHiding from "./ColumnHiding";
+import BasicFetchTable from "./BasicFetchTable";
 
 //https://www.balldontlie.io/#getting-started
 // https://www.balldontlie.io/api/v1/players
@@ -26,14 +27,18 @@ const Main = () => {
 
   return (
     <>
-    <ColumnHiding />
+    {/* <ColumnHiding /> */}
     {/* <ColumnOrder/> */}
     {/* <RowSelection /> */}
     {/* <PaginationTable/> */}
     {/* <FilteringTable /> */}
     {/* <SortingTable/> */}
-    {/* <BasicTable/> */}
-      {playerList.data && (
+    {playerList.isLoading && <div>Loading</div>}
+    {playerList.isError && <div>Uh Oh</div>}
+    {playerList.isSuccess && 
+    <BasicFetchTable dataSet={playerList.data.data} />}
+    {/* <BasicTable /> */}
+      {/* {playerList.data && (
         <div className="App-header">
           {playerList.data.data.map((playerPlayer, indexPlayer) => (
             <div key={indexPlayer}>
@@ -41,7 +46,7 @@ const Main = () => {
             </div>
           ))}{" "}
         </div>
-      )}
+      )} */}
     </>
   );
 };
