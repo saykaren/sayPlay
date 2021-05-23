@@ -20,7 +20,7 @@ const Main = () => {
   return (
     <>
     <header>
-      <h1>React-table</h1>
+      <h1>Basketball API with React-table</h1>
     </header>
     <section className="table_component">
       {playerList.isLoading && <div>Loading</div>}

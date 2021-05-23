@@ -62,9 +62,9 @@ const BasicFetchTable = ({ dataSet }) => {
       <table {...getTableProps()} id="table">
         <thead>
           {headerGroups.map((headerGroup) => (
-            <tr {...headerGroup.getHeaderGroupProps()}>
+            <tr {...headerGroup.getHeaderGroupProps()} key={`${Math.round(Math.random()*1000)}${headerGroup.id}`}>
               {headerGroup.headers.map((column) => (
-                <th {...column.getHeaderProps(column.getSortByToggleProps())}>
+                <th {...column.getHeaderProps(column.getSortByToggleProps())} key={`${Math.round(Math.random()*1000)}${column.id}`}>
                   {column.render("Header")}
                   <span className="filter_icon">
                     {column.isSorted ? (
@@ -86,17 +86,17 @@ const BasicFetchTable = ({ dataSet }) => {
           {rows.map((row) => {
             prepareRow(row);
             return (
-              <tr {...row.getRowProps()}>
+              <tr {...row.getRowProps()} key={`${Math.round(Math.random()*1000)}${row.id}`}>
                 {row.cells.map((cell) => {
                   return (
-                    <td {...cell.getCellProps()}> {cell.render("Cell")}</td>
+                    <td {...cell.getCellProps()} key={`${Math.round(Math.random()*1000)}cell${Math.round(Math.random()*1000)}`}> {cell.render("Cell")} </td>
                   );
                 })}
               </tr>
             );
           })}
         </tbody>
-        <tfoot>
+        {/* <tfoot>
           {footerGroups.map((footerGroup) => (
             <tr {...footerGroup.getFooterGroupProps()}>
               {footerGroup.headers.map((column) => (
@@ -104,7 +104,7 @@ const BasicFetchTable = ({ dataSet }) => {
               ))}
             </tr>
           ))}
-        </tfoot>
+        </tfoot> */}
       </table>
       <pre>
         <code>
