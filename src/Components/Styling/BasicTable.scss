@@ -1,3 +1,5 @@
+@import './variables.scss';
+
 #table {
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
@@ -6,24 +8,26 @@
 
 #table td,
 #table th {
-  border: 1px solid #ddd;
+  border: 1px solid $text-light;
   padding: 8px;
 }
 
 #table tr:nth-child(even) {
-  background-color: #f2f2f2;
+  background-color: $secondary-color;
+  color: $text-light;
 }
 
 #table tr:hover {
-  background-color: #ddd;
+  background-color: $primary-color;
+  color: $text-hover;
 }
 
 #table th, tfoot td {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: center;
-  background-color: #4caf50;
-  color: white;
+  background-color: $primary-color;
+  color: $text-light;
 }
 
 .filter_icon {

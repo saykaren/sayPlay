@@ -1,14 +1,6 @@
 import React, { useState } from "react";
 import { useQuery } from "react-query";
 import fetchURL from "./../useQuery/fetchURL";
-import BasicTable from './BasicTable';
-import SortingTable from './SortingTable';
-import GlobalFilter from './GlobalFilter';
-import FilteringTable from "./FilteringTable";
-import PaginationTable from "./PaginationTable";
-import RowSelection from "./RowSelection";
-import ColumnOrder from "./ColumnOrder";
-import ColumnHiding from "./ColumnHiding";
 import BasicFetchTable from "./BasicFetchTable";
 
 //https://www.balldontlie.io/#getting-started
@@ -27,26 +19,16 @@ const Main = () => {
 
   return (
     <>
-    {/* <ColumnHiding /> */}
-    {/* <ColumnOrder/> */}
-    {/* <RowSelection /> */}
-    {/* <PaginationTable/> */}
-    {/* <FilteringTable /> */}
-    {/* <SortingTable/> */}
-    {playerList.isLoading && <div>Loading</div>}
-    {playerList.isError && <div>Uh Oh</div>}
-    {playerList.isSuccess && 
-    <BasicFetchTable dataSet={playerList.data.data} />}
-    {/* <BasicTable /> */}
-      {/* {playerList.data && (
-        <div className="App-header">
-          {playerList.data.data.map((playerPlayer, indexPlayer) => (
-            <div key={indexPlayer}>
-              Name: {playerPlayer.first_name} {playerPlayer.last_name}
-            </div>
-          ))}{" "}
-        </div>
-      )} */}
+    <header>
+      <h1>React-table</h1>
+    </header>
+    <section className="table_component">
+      {playerList.isLoading && <div>Loading</div>}
+      {playerList.isError && <div>Uh Oh</div>}
+      {playerList.isSuccess && (
+        <BasicFetchTable dataSet={playerList.data.data} />
+      )}
+      </section>
     </>
   );
 };
