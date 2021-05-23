@@ -1,8 +1,16 @@
 import React, { useMemo } from "react";
-import { useTable, useGlobalFilter, useRowSelect } from "react-table";
+import {
+  useTable,
+  useGlobalFilter,
+  useRowSelect,
+  useSortBy,
+} from "react-table";
 import Checkbox from "./Checkbox";
 import { COLUMNS } from "./ColumnsFetched";
 import GlobalFilter from "./GlobalFilter";
+import upArrow from "./../Assets/expand_less.png";
+import downArrow from "./../Assets/expand_more.png";
+import sort from "./../Assets/sort_white.png";
 
 const BasicFetchTable = ({ dataSet }) => {
   const columns = useMemo(() => COLUMNS, []);
@@ -24,7 +32,9 @@ const BasicFetchTable = ({ dataSet }) => {
       data,
     },
     useGlobalFilter,
+    useSortBy,
     useRowSelect,
+    
 
     (hooks) => {
       hooks.visibleColumns.push((columns) => {
@@ -54,7 +64,20 @@ const BasicFetchTable = ({ dataSet }) => {
           {headerGroups.map((headerGroup) => (
             <tr {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map((column) => (
-                <th {...column.getHeaderProps()}>{column.render("Header")}</th>
+                <th {...column.getHeaderProps(column.getSortByToggleProps())}>
+                  {column.render("Header")}
+                  <span className="filter_icon">
+                    {column.isSorted ? (
+                      column.isSorted ? (
+                        <img src={downArrow} alt="Down" />
+                      ) : (
+                        <img src={upArrow} alt="Up" />
+                      )
+                    ) : (
+                      <img src={sort} alt="sort" />
+                    )}
+                  </span>
+                </th>
               ))}
             </tr>
           ))}
@@ -84,15 +107,15 @@ const BasicFetchTable = ({ dataSet }) => {
         </tfoot>
       </table>
       <pre>
-          <code>
-              {JSON.stringify(
-                  {
-                      selectedFlatRows: selectedFlatRows.map((row)=> row.original),
-                  },
-                  null,
-                  2
-              )}
-          </code>
+        <code>
+          {JSON.stringify(
+            {
+              selectedFlatRows: selectedFlatRows.map((row) => row.original),
+            },
+            null,
+            2
+          )}
+        </code>
       </pre>
     </>
   );
