@@ -1,5 +1,5 @@
-@import './variables.scss';
-@import './BasicTable.scss';
+@import "./variables.scss";
+@import "./BasicTable.scss";
 
 .App {
   text-align: center;
@@ -38,4 +38,14 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+h1 {
+  text-align: center;
+  text-shadow: 2px 2px $primary-color;
+  font-size: 2.5em;
+}
+
+.table_component {
+  margin: 10px;
 }
