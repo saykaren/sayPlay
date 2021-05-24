@@ -1,6 +1,8 @@
-# Getting Started with Create React App
+# Summary
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This app was created to demonstrate react-query and react-table from fetching data from https://www.balldontlie.io API. 
+
+To view the live site please visit [App](https://saykaren.github.io/sayPlay/)
 
 ## Available Scripts
 
