@@ -7,6 +7,7 @@ import fetchSpecificURL from "./../useQuery/fetchSpecific";
 //https://www.balldontlie.io/#getting-started
 // https://www.balldontlie.io/api/v1/players
 //https://www.balldontlie.io/api/v1/teams
+// "https://www.balldontlie.io/api/v1/players?page=2"
 
 const Main = () => {
   const [playersURL, setPlayersURL] = useState(
@@ -19,7 +20,7 @@ const Main = () => {
 
   const playerList = useQuery(["playersList", `${playersURL}`], fetchURL);
   const statList = useQuery(
-    ["playerStats", `${playersURL}`, statsURL],
+    ["playerStats", "https://www.balldontlie.io/api/v1/players", statsURL],
     fetchSpecificURL
   );
   const teamList = useQuery(["teamList", `${teamURL}`], fetchURL);
@@ -37,6 +38,8 @@ const Main = () => {
             dataSet={playerList.data.data}
             setStatsURL={setStatsURL}
             statList={statList.data}
+            setPlayersURL={setPlayersURL}
+            pagination={playerList.data.meta}
           />
         )}
       </section>
