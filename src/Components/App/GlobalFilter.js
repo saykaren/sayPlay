@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { useAsyncDebounce } from 'react-table';
 
 
-const GlobalFilter = ({filter, setFilter}) => {
+const GlobalFilter = ({filter, setFilter, title}) => {
     const [value, setValue] = useState(filter);
     const onChange = useAsyncDebounce(value => {
         setFilter(value || undefined)
@@ -10,7 +10,7 @@ const GlobalFilter = ({filter, setFilter}) => {
 
     return ( 
         <span>
-            Search: {''}
+            {title}{" "}
             <input value={value || ""}
             onChange={(e) => 
                 {

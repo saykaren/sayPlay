@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useState } from "react";
 import {
   useTable,
   useGlobalFilter,
@@ -7,25 +7,23 @@ import {
 } from "react-table";
 import Checkbox from "./Checkbox";
 import { COLUMNS } from "./ColumnsFetched";
-import GlobalFilter from "./GlobalFilter";
 import upArrow from "./../Assets/expand_less.png";
 import downArrow from "./../Assets/expand_more.png";
 import sort from "./../Assets/sort_white.png";
+import minimizeIcon from "./../Assets/minimize_white.png";
 
-const BasicFetchTable = ({ dataSet }) => {
+const BasicFetchTable = ({ dataSet, setStatsURL, statList }) => {
   const columns = useMemo(() => COLUMNS, []);
   const data = useMemo(() => dataSet, []);
+  const [modal, setModal] = useState(false);
 
   const {
     getTableProps,
     getTableBodyProps,
     headerGroups,
-    footerGroups,
     rows,
     prepareRow,
     selectedFlatRows,
-    setGlobalFilter,
-    state,
   } = useTable(
     {
       columns,
@@ -34,7 +32,6 @@ const BasicFetchTable = ({ dataSet }) => {
     useGlobalFilter,
     useSortBy,
     useRowSelect,
-    
 
     (hooks) => {
       hooks.visibleColumns.push((columns) => {
@@ -54,17 +51,61 @@ const BasicFetchTable = ({ dataSet }) => {
     }
   );
 
-  const { globalFilter } = state;
+  const activateModal = () => {
+    const array = [];
+    setModal(!modal);
+    selectedFlatRows
+      .map((row) => row.original)
+      .map((x) => {
+        array.push(x.id);
+      });
+    setStatsURL(array);
+  };
 
   return (
     <>
-      <GlobalFilter filter={globalFilter} setFilter={setGlobalFilter} />
+      <button
+        disabled={selectedFlatRows.length < 1}
+        onClick={() => activateModal()}
+      >
+        Stat Details
+      </button>
+      {modal && statList && (
+        <section className="">
+          <div className="modal">
+            <img
+              src={minimizeIcon}
+              alt="minimize"
+              onClick={() => setModal(!modal)}
+              className="smallIcon floatRight"
+            />
+            <div>
+              {" "}
+              {statList.data.map((statData, indexData) => (
+                <div key={indexData}>
+                  <h2>Player id: {statData.player_id} </h2>
+                  <ul>Season: {statData.season} </ul>
+                  <ul>Games Played:{statData.games_played}</ul>
+                  <ul>Turnover:{statData.turnover}</ul>
+                  <ul>Points:{statData.pts}</ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
       <table {...getTableProps()} id="table">
         <thead>
           {headerGroups.map((headerGroup) => (
-            <tr {...headerGroup.getHeaderGroupProps()} key={`${Math.round(Math.random()*1000)}${headerGroup.id}`}>
+            <tr
+              {...headerGroup.getHeaderGroupProps()}
+              key={`${Math.round(Math.random() * 1000)}${headerGroup.id}`}
+            >
               {headerGroup.headers.map((column) => (
-                <th {...column.getHeaderProps(column.getSortByToggleProps())} key={`${Math.round(Math.random()*1000)}${column.id}`}>
+                <th
+                  {...column.getHeaderProps(column.getSortByToggleProps())}
+                  key={`${Math.round(Math.random() * 1000)}${column.id}`}
+                >
                   {column.render("Header")}
                   <span className="filter_icon">
                     {column.isSorted ? (
@@ -86,25 +127,27 @@ const BasicFetchTable = ({ dataSet }) => {
           {rows.map((row) => {
             prepareRow(row);
             return (
-              <tr {...row.getRowProps()} key={`${Math.round(Math.random()*1000)}${row.id}`}>
+              <tr
+                {...row.getRowProps()}
+                key={`${Math.round(Math.random() * 1000)}${row.id}`}
+              >
                 {row.cells.map((cell) => {
                   return (
-                    <td {...cell.getCellProps()} key={`${Math.round(Math.random()*1000)}cell${Math.round(Math.random()*1000)}`}> {cell.render("Cell")} </td>
+                    <td
+                      {...cell.getCellProps()}
+                      key={`${Math.round(Math.random() * 1000)}cell${Math.round(
+                        Math.random() * 1000
+                      )}`}
+                    >
+                      {" "}
+                      {cell.render("Cell")}{" "}
+                    </td>
                   );
                 })}
               </tr>
             );
           })}
         </tbody>
-        {/* <tfoot>
-          {footerGroups.map((footerGroup) => (
-            <tr {...footerGroup.getFooterGroupProps()}>
-              {footerGroup.headers.map((column) => (
-                <td {...column.getFooterProps}>{column.render("Footer")}</td>
-              ))}
-            </tr>
-          ))}
-        </tfoot> */}
       </table>
       <pre>
         <code>
