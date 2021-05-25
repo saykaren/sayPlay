@@ -12,11 +12,22 @@ import downArrow from "./../Assets/expand_more.png";
 import sort from "./../Assets/sort_white.png";
 import minimizeIcon from "./../Assets/minimize_white.png";
 
-const BasicFetchTable = ({ dataSet, setStatsURL, statList }) => {
+// "https://www.balldontlie.io/api/v1/players?page=2"
+
+const BasicFetchTable = ({
+  dataSet,
+  setStatsURL,
+  statList,
+  setPlayersURL,
+  pagination,
+}) => {
   const columns = useMemo(() => COLUMNS, []);
   const data = useMemo(() => dataSet, []);
   const [modal, setModal] = useState(false);
 
+  const playerPageBaseURL = "https://www.balldontlie.io/api/v1/players?page=";
+
+  console.log({ pagination });
   const {
     getTableProps,
     getTableBodyProps,
@@ -165,6 +176,22 @@ const BasicFetchTable = ({ dataSet, setStatsURL, statList }) => {
           })}
         </tbody>
       </table>
+      {pagination.current_page} of {pagination.total_pages} |
+      <button
+        onClick={() =>
+          setPlayersURL(`${playerPageBaseURL}${pagination.current_page - 1}`)
+        }
+        disabled={pagination.current_page < 2}
+      >
+        {"<<"}
+      </button>
+      <button
+        onClick={() =>
+          setPlayersURL(`${playerPageBaseURL}${pagination.next_page}`)
+        }
+      >
+        {">>"}
+      </button>
       <pre>
         <code>
           {JSON.stringify(
