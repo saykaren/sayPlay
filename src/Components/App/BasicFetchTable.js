@@ -79,6 +79,7 @@ const BasicFetchTable = ({ dataSet, setStatsURL, statList }) => {
               onClick={() => setModal(!modal)}
               className="smallIcon floatRight"
             />
+            {statList.data.length > 0 ? 
             <div>
               {" "}
               {statList.data.map((statData, indexData) => (
@@ -90,7 +91,8 @@ const BasicFetchTable = ({ dataSet, setStatsURL, statList }) => {
                   <ul>Points:{statData.pts}</ul>
                 </div>
               ))}
-            </div>
+            </div> :
+            <div>Player has no record for 2018</div>}
           </div>
         </section>
       )}
