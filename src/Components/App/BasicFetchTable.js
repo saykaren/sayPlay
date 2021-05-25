@@ -53,7 +53,7 @@ const BasicFetchTable = ({ dataSet, setStatsURL, statList }) => {
 
   const activateModal = () => {
     const array = [];
-    setModal(!modal);
+    setModal(true);
     selectedFlatRows
       .map((row) => row.original)
       .map((x) => {
@@ -68,7 +68,7 @@ const BasicFetchTable = ({ dataSet, setStatsURL, statList }) => {
         disabled={selectedFlatRows.length < 1}
         onClick={() => activateModal()}
       >
-        Stat Details
+        2018 Stat Details
       </button>
       {modal && statList && (
         <section className="">
@@ -79,20 +79,34 @@ const BasicFetchTable = ({ dataSet, setStatsURL, statList }) => {
               onClick={() => setModal(!modal)}
               className="smallIcon floatRight"
             />
-            {statList.data.length > 0 ? 
-            <div>
-              {" "}
-              {statList.data.map((statData, indexData) => (
-                <div key={indexData}>
-                  <h2>Player id: {statData.player_id} </h2>
-                  <ul>Season: {statData.season} </ul>
-                  <ul>Games Played:{statData.games_played}</ul>
-                  <ul>Turnover:{statData.turnover}</ul>
-                  <ul>Points:{statData.pts}</ul>
-                </div>
-              ))}
-            </div> :
-            <div>Player has no record for 2018</div>}
+            {statList.data.length > 0 ? (
+              <div>
+                <table id="table">
+                  <thead>
+                    <tr>
+                      <th>Player Id</th>
+                      <th>Season</th>
+                      <th>Games Played</th>
+                      <th>Turnover</th>
+                      <th>Points</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {statList.data.map((statData, indexData) => (
+                      <tr key={indexData}>
+                        <td>{statData.player_id}</td>
+                        <td>{statData.season} </td>
+                        <td>{statData.games_played}</td>
+                        <td>{statData.turnover}</td>
+                        <td>{statData.pts}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            ) : (
+              <div>Player has no record for 2018</div>
+            )}
           </div>
         </section>
       )}
