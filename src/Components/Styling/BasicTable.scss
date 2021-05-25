@@ -17,6 +17,11 @@
   color: $text-light;
 }
 
+#table tr:nth-child(odd) {
+  background-color: $text-hover;
+  color: $text-dark;
+}
+
 #table tr:hover {
   background-color: $primary-color;
   color: $text-hover;
