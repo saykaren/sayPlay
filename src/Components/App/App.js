@@ -2,6 +2,7 @@ import React from "react";
 import "../Styling/App.scss";
 import { QueryClient, QueryClientProvider } from "react-query";
 import Main from './Main';
+import Footer from './Footer';
 
 
 import {ReactQueryDevtools} from 'react-query/devtools';
@@ -13,6 +14,7 @@ const App = () => {
 
     <QueryClientProvider client={queryClient}>
         <Main />
+        <Footer />
       <ReactQueryDevtools initialIsOpen={false} position={'bottom-right'} />
     </QueryClientProvider>
   );
